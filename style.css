@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe6e6; /* Helles Rosa */
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Damit keine Scrollbalken kommen wenn Herzen fliegen */
+}
+
+/* Die Karte in der Mitte */
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    z-index: 10;
+    max-width: 90%;
+}
+
+.main-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ff3366;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Wichtig für die Positionierung */
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#yesBtn {
+    background-color: #28a745;
+    color: white;
+}
+
+#yesBtn:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}
+
+#noBtn {
+    background-color: #dc3545;
+    color: white;
+    position: relative; /* Damit wir es bewegen können */
+}
+
+/* Fliegende Herzen Hintergrund */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatUp linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juhu!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hearts-container"></div>
+
+    <div class="card">
+        <!-- Platzhalter Bild für Success -->
+        <img src="img1.jpeg" alt="Happy Image" class="main-image">
+        
+        <h1>Danke Schäfchen ich liebe dich ❤️</h1>
+    </div>
+
+    <!-- Ein bisschen Konfetti Logik (optional, aber süß) -->
+    <script>
+        // Erzeugt noch mehr Herzen beim Laden
+        const container = document.querySelector('.hearts-container');
+        for (let i = 0; i < 50; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            container.appendChild(heart);
+        }
+    </script>
+</body>
+</html>
